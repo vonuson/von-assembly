@@ -3,11 +3,9 @@
 ; Author: Von Uson
 ; Date: May 5, 2023
 
-global _start
-
 section .text:
-
-_start:
+    global _start               ; must be delcared for using gcc
+_start:                     ; tell linker entry point
     ; write syscall - ssize_t write(int fd, const void *buf, size_t count); 
     mov eax, 0x4            ; use write syscall
     mov ebx, 1              ; use stdout as the fd
